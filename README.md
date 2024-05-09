@@ -9,7 +9,7 @@ website or local HTML. It is intended as a skeleton for later making an automate
 
 Clone this repository and open with Android Studio.
 
-`git clone `
+`git clone https://github.com/vluz/WebsiteToAndroidApp.git`
 
 ---
 
