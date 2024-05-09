@@ -29,6 +29,5 @@ jobs:
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
-        name: ${{ github.sha }}-APK_release_unsigned_ZIP
+        name: ${{ github.sha }}-APK_Release_Unsigned_ZIP
         path: ${{ github.workspace }}/app/build/outputs/apk/release/app-release-unsigned.apk
-
