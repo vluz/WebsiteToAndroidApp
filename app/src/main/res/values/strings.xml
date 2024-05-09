@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Victor Luz</string>
+    <string name="web_url">https://vluz.eu/</string>
+</resources>
+
+    <!-- To use file as web_url, set it to; "file:///android_asset/your_index.html"); -->
