@@ -25,9 +25,6 @@ jobs:
     - name: Run build with Gradle Wrapper
       run: ./gradlew assembleRelease
 
-    -name: list files
-      run: ls app/build/outputs/apk/release/*.apk
-
     - name: Get release file apk path
       run: APKFILE=$(find app/build/outputs/apk/release/*.apk)
 
