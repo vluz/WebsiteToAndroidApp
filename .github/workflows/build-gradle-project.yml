@@ -25,12 +25,9 @@ jobs:
     - name: Run build with Gradle Wrapper
       run: ./gradlew assembleRelease
 
-    - name: Get release file apk path
-      run: env.APKFILE=$(find . -name *.apk)
-
     - name: Upload APK
       uses: actions/upload-artifact@v3
       with:
         name: ${{ github.sha }}
-        path: ${{ env.APKFILE }}
+        path: ${{ app/build/outputs/apk/release/app-release-unsigned.apk }}
 
