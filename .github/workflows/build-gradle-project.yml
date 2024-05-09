@@ -19,3 +19,17 @@ jobs:
       uses: gradle/gradle-build-action@v2
     - name: Run build with Gradle Wrapper
       run: ./gradlew assembleRelease
+    - name: Get release file apk path
+        id: releaseApk
+        run: echo "apkfile=$(find app/build/outputs/apk/release/*.apk)" >> $GITHUB_OUTPUT
+    - name: Zip Files
+        uses: papeloto/action-zip@v1
+        with:
+          files: ${{ steps.releaseApk.outputs.apkfile }}
+          dest: ${{ steps.releaseApk.outputs.apkfile }}.zip
+    - name: Upload APK
+      uses: actions/upload-artifact@v3
+      with:
+        name: ${{ github.sha }}
+        path: ${{ steps.releaseApk.outputs.apkfile }}.zip
+
