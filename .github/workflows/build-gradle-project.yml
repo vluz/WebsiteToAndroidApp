@@ -25,12 +25,15 @@ jobs:
     - name: Run build with Gradle Wrapper
       run: ./gradlew assembleRelease
 
+    -name list files
+      run: ls app/build/outputs/apk/release/*.apk
+
     - name: Get release file apk path
-      run: echo "apkfile=$(find app/build/outputs/apk/release/*.apk)" >> $GITHUB_OUTPUT
+      run: APKFILE=$(find app/build/outputs/apk/release/*.apk)
 
     - name: Upload APK
       uses: actions/upload-artifact@v3
       with:
         name: ${{ github.sha }}
-        path: ${{ env.apkfile }}
+        path: ${{ env.APKFILE }}
 
