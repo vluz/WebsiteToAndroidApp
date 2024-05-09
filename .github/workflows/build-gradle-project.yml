@@ -18,10 +18,10 @@ jobs:
         distribution: 'temurin'
 
     - name: Setup Android SDK
-      uses: android-actions/setup-android@v2.0.10
+      uses: android-actions/setup-android@v3
 
     - name: Setup Gradle
-      uses: gradle/gradle-build-action@v2
+      uses: gradle/gradle-build-action@v3
 
     - name: Run release build
       run: ./gradlew assembleRelease
