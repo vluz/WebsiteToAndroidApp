@@ -26,7 +26,7 @@ jobs:
       run: ./gradlew assembleRelease
 
     - name: Get release file apk path
-      run: APKFILE=$(find app/release/*.apk)
+      run: APKFILE=$(find . -name *.apk)
 
     - name: Upload APK
       uses: actions/upload-artifact@v3
