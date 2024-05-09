@@ -26,12 +26,11 @@ jobs:
       run: ./gradlew assembleRelease
 
     - name: Get release file apk path
-        id: releaseApk
-        run: echo "apkfile=$(find app/build/outputs/apk/release/*.apk)" >> $GITHUB_OUTPUT
+      run: echo "apkfile=$(find app/build/outputs/apk/release/*.apk)" >> $GITHUB_OUTPUT
 
     - name: Upload APK
       uses: actions/upload-artifact@v3
       with:
         name: ${{ github.sha }}
-        path: ${{ steps.releaseApk.outputs.apkfile }}.zip
+        path: ${{ env.apkfile }}
 
